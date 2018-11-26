@@ -1,7 +1,7 @@
 # Build a model classifying poisonous mushroom
 
 ## Dataset
-Mushroom
+Mushroom  
 Features of 8,124 mushrooms are included.  
 https://archive.ics.uci.edu/ml/datasets/mushroom
 
