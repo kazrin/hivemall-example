@@ -2,7 +2,7 @@
 
 ## Dataset
 Mushroom
-Features of 8124 mushrooms are included.
+Features of 8124 mushrooms are included.  
 https://archive.ics.uci.edu/ml/datasets/mushroom
 
 ## Task
