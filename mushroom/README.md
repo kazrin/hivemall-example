@@ -1,4 +1,4 @@
-# Build a model classifying poisonous mushroom and non-poisonous one
+# Build a model classifying poisonous mushroom
 
 ## Dataset
 Mushroom
