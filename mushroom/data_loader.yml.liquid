@@ -1,0 +1,51 @@
+in:
+  type: http
+  url: https://archive.ics.uci.edu/ml/machine-learning-databases/mushroom/agaricus-lepiota.data
+
+  parser:
+    charset: UTF-8
+    newline: LF
+    type: csv
+    delimiter: ','
+    quote: '"'
+    escape: '"'
+    null_string: 'NULL'
+    trim_if_not_quoted: false
+    skip_header_lines: 1
+    allow_extra_columns: false
+    allow_optional_columns: false
+    columns:
+      - {name: is_poisonous, type: string}
+      - {name: cap-shape, type: string}
+      - {name: cap-surface, type: string}
+      - {name: cap-color, type: string}
+      - {name: bruises, type: string}
+      - {name: odor, type: string}
+      - {name: gill-attachment, type: string}
+      - {name: gill-spacing, type: string}
+      - {name: gill-size, type: string}
+      - {name: gill-color, type: string}
+      - {name: stalk-shape, type: string}
+      - {name: stalk-root, type: string}
+      - {name: stalk-surface-above-ring, type: string}
+      - {name: stalk-surface-below-ring, type: string}
+      - {name: stalk-color-above-ring, type: string}
+      - {name: stalk-color-below-ring, type: string}
+      - {name: veil-type, type: string}
+      - {name: veil-color, type: string}
+      - {name: ring-number, type: string}
+      - {name: ring-type, type: string}
+      - {name: spore-print-color, type: string}
+      - {name: population, type: string}
+      - {name: habitat, type: string}
+
+  method: get
+
+out:
+  type: td
+  apikey: {{env.td_api_key}}
+  endpoint: api.treasuredata.com
+  database: yoshimura_db
+  table: mushroom
+  auto_create_table: true
+  mode: replace

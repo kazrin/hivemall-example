@@ -1,0 +1,44 @@
+_export:
+  td:
+    database: ${database}
+
++initialization:
+  sh>: sh init.sh
+
++load:
+  sh>: embulk run ./data_loader.yml.liquid
+
++prepare:
+  td>: queries/prepare.sql
+  create_table: mushroom_source
+  engine: presto
+
++build_and_predict:
+  for_each>:
+    model: [logistic_regression, randomforest]
+
+  _parallel: true
+  _do:
+    +preprocessing:
+      td>: queries/${model}/preprocessing.sql 
+      create_table: mushroom_${model}_preprocessed
+      engine: hive
+  
+    +model:
+      td>: queries/${model}/build_model.sql
+      create_table: mushroom_${model}_model
+      engine: hive
+  
+    +predict:
+      td>: queries/${model}/predict.sql
+      create_table: mushroom_${model}_predicted
+      engine: hive
+
+    +auc:
+      td>: queries/${model}/auc.sql
+      engine: hive
+      store_last_results: true
+
+    +check_score:
+      echo>: ${task_name} ${td.last_results}
+  
