@@ -9,6 +9,6 @@ https://archive.ics.uci.edu/ml/datasets/mushroom
 Classify poisonous mushrrom and non-poisonous mushrrom.
 
 ## Exec
-`digdag run mushroom.dig -p {database} -p {td_api_key}
+`digdag run mushroom.dig -p {database} -p {td_api_key}`
 
 Please replace {database} and {td_api_key}
