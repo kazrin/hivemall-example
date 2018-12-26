@@ -6,7 +6,7 @@ Features of 8,124 mushrooms are included.
 https://archive.ics.uci.edu/ml/datasets/mushroom
 
 ## Task
-Classify poisonous mushroom and non-poisonous one.
+Classify poisonous mushrooms and non-poisonous ones.
 
 ## Run
 `digdag run mushroom.dig -p {database} -p {td_api_key}`
