@@ -8,7 +8,7 @@ https://archive.ics.uci.edu/ml/datasets/mushroom
 ## Task
 Classify poisonous mushroom and non-poisonous one.
 
-## Execution
+## Run
 `digdag run mushroom.dig -p {database} -p {td_api_key}`
 
 Please replace {database} and {td_api_key}
